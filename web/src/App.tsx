@@ -1,8 +1,18 @@
 import './styles/main.css';
 import { MagnifyingGlassPlus } from 'phosphor-react';
 import logoImg from './assets/Logo.svg';
+import { Game } from './components/game';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [] = useState([]);
+
+  useEffect(()=>{
+    fetch('')
+      .then(res => res.json())
+      .then()
+  },[])
+
   return (
     <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
       <img src={logoImg}/>
@@ -12,49 +22,9 @@ function App() {
       </h1>
 
       <div className=' grid grid-cols-6 gap-6 mt-16'>
-         <a href="" className='relative rounded-lg overflow-hidden'>
-          <img src="/image 1.png" alt="" />
-            <div className='w-full pt-16 pb-2 pl-2 bg-gamegradiente absolute bottom-0 left-0 right-0'>
-              <strong className='font-bold text-white block'> League of Legends</strong>
-              <span className='text-zinc-400 text-sm block mt-1'>4 anucios</span>
-            </div>
-         </a>
-         <a href=""  className='relative rounded-lg overflow-hidden'>
-          <img src="/image 2.png" alt="" />
-          <div className='w-full pt-16 pb-2 pl-2 bg-gamegradiente absolute bottom-0 left-0 right-0'>
-              <strong className='font-bold text-white block'> Doga 2</strong>
-              <span className='text-zinc-400 text-sm block mt-1'>7 anucios</span>
-            </div>
-         </a>
-         <a href=""  className='relative rounded-lg overflow-hidden'>
-          <img src="/image 3.png" alt="" />
-          <div className='w-full pt-16 pb-2 pl-2 bg-gamegradiente absolute bottom-0 left-0 right-0'>
-              <strong className='font-bold text-white block'> Couter Strike</strong>
-              <span className='text-zinc-400 text-sm block mt-1'>2 anucios</span>
-            </div>
-         </a>
-         <a href=""  className='relative rounded-lg overflow-hidden'>
-          <img src="/image 5.png" alt="" />
-          <div className='w-full pt-16 pb-2 pl-2 bg-gamegradiente absolute bottom-0 left-0 right-0'>
-              <strong className='font-bold text-white block'> Apex</strong>
-              <span className='text-zinc-400 text-sm block mt-1'>3 anucios</span>
-            </div>
-         </a>
-         <a href=""  className='relative rounded-lg overflow-hidden'>
-          <img src="/image 6.png" alt="" />
-          <div className='w-full pt-16 pb-2 pl-2 bg-gamegradiente absolute bottom-0 left-0 right-0'>
-              <strong className='font-bold text-white block'> Fortinite</strong>
-              <span className='text-zinc-400 text-sm block mt-1'>4 anucios</span>
-            </div>
-         </a>
-         <a href=""  className='relative rounded-lg overflow-hidden'>
-          <img src="/image 7.png" alt="" />
-          <div className='w-full pt-16 pb-2 pl-2 bg-gamegradiente absolute bottom-0 left-0 right-0'>
-              <strong className='font-bold text-white block'> Warcraft</strong>
-              <span className='text-zinc-400 text-sm block mt-1'>9 anucios</span>
-            </div>
-         </a>
-         
+        <Game bannerUrl='/image 1.png' title='League of legends' adsCount={1}/>
+        <Game bannerUrl='/image 2.png' title='League of legends' adsCount={2}/>
+        <Game bannerUrl='/image 3.png' title='League of legends' adsCount={3}/>
       </div> 
 
       <div className='pt-1 bg-gradiente mt-8 self-stretch overflow-hidden rounded-lg'>
