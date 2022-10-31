@@ -1,16 +1,31 @@
 import './styles/main.css';
-import { MagnifyingGlassPlus } from 'phosphor-react';
-import logoImg from './assets/Logo.svg';
+import * as Dialog from '@radix-ui/react-dialog';
+
 import { Game } from './components/game';
+import { CreateAd } from './components/CreateAd';
 import { useEffect, useState } from 'react';
 
+import logoImg from './assets/Logo.svg';
+
+interface Game{
+  id: string;
+  title: string;
+  bannerUrl: string;
+  _count: {
+    ads: number;
+  }
+}
+
 function App() {
-  const [] = useState([]);
+  const [Games, SetGames] = useState<Game[]>([]);
 
   useEffect(()=>{
-    fetch('')
+    fetch('http://localhost:3333/games')
       .then(res => res.json())
-      .then()
+      .then(data =>{
+        SetGames(data);
+        //console.log(data);
+      })
   },[])
 
   return (
@@ -22,26 +37,20 @@ function App() {
       </h1>
 
       <div className=' grid grid-cols-6 gap-6 mt-16'>
-        <Game bannerUrl='/image 1.png' title='League of legends' adsCount={1}/>
-        <Game bannerUrl='/image 2.png' title='League of legends' adsCount={2}/>
-        <Game bannerUrl='/image 3.png' title='League of legends' adsCount={3}/>
+        { Games.length >0 ? (
+            Games.map(game =>{
+              return <Game key={game.id} bannerUrl={game.bannerUrl} title={game.title} adsCount={game._count.ads}/>
+            }) 
+          ): (
+            <h1></h1>
+          )
+        }
       </div> 
-
-      <div className='pt-1 bg-gradiente mt-8 self-stretch overflow-hidden rounded-lg'>
-        <div className='bg-[#2A2634] px-8 py-6 flex justify-between'>
-          <div>
-            <strong className='text-2xl text-white font-black block'>Não encontrou seu Duo?</strong>
-            <span className='text-zinc-400 block'>Publique um anucio para encontrar novos players.</span>
-          </div>
-
-          <button className='py-3 px-4 bg-violet-400 rounded hover:bg-violet-600 text-white flex items-center gap-3'>
-            <MagnifyingGlassPlus size={24}/>
-            Publicar anucio
-          </button>
-        </div>
-      </div>
       
-
+      <Dialog.Root>
+        <CreateAd/>
+      </Dialog.Root>
+      
     </div>
   )
 }
