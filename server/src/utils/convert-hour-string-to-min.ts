@@ -11,7 +11,7 @@ export function convertMinToHour(MinutosTotal: number){
 
     const minutos = MinutosTotal % 60;
 
-    const horasFinal = horas + ":" + minutos;
+    const horasFinal =  String(horas).padStart(2,'0') + ":" + String(minutos).padStart(2,'0');
 
     return horasFinal;
 }
