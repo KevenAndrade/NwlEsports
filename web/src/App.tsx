@@ -134,7 +134,10 @@ function App() {
                 </div>
 
                 <footer className='mt-4 flex flex-row gap-4 justify-end'>
-                  <button className='bg-zinc-500 px-5 h-12 rounded-md font-semibold'>Cancelar</button>
+                  <Dialog.Close 
+                    className='bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600'
+                    type='button'
+                  >Cancelar</Dialog.Close>
                   <button 
                     type='submit' 
                     className='bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600'>
