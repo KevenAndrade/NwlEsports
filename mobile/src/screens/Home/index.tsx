@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import { View, Image, FlatList } from 'react-native';
 import { SafeAreaView} from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles';
 import { Background } from '../../components/Background';
@@ -12,7 +12,7 @@ import { GameCard, GameCardProps } from '../../components/GameCard';
 export function Home() {
     const [Games, setGames] = useState<GameCardProps[]>([])
     useEffect(() =>{
-        fetch('http://192.168.1.215:3333/games')
+        fetch('http://192.168.1.226:3333/games')
         .then(res => res.json())
         .then(data => {
             setGames(data)
@@ -21,8 +21,8 @@ export function Home() {
 
     const navigation = useNavigation();
 
-    function handleOnpenGame(){
-        navigation.navigate('game');
+    function handleOnpenGame({ id, title, bannerUrl}: GameCardProps){
+        navigation.navigate('game', { id, title, bannerUrl});
     }
 
   return (
@@ -41,7 +41,7 @@ export function Home() {
                 renderItem={({item}) => (
                     <GameCard 
                         data={item}
-                        onPress={handleOnpenGame}
+                        onPress={() => handleOnpenGame(item)}
                     />
                 )}
                 showsHorizontalScrollIndicator={false}

@@ -4,7 +4,7 @@ import { styles } from './styles';
 import { THEME } from '../../theme';
 
 export interface GameCardProps {
-    id: String; 
+    id: string; 
     title: string;
     _count: { ads: number }; 
     bannerUrl: string;
