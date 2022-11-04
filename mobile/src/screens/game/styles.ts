@@ -20,5 +20,10 @@ export const styles = StyleSheet.create({
   logo: {
     width: 72,
     height: 40
+  },
+  cover:{
+    width: 311,
+    height: 170,
+    borderRadius: 8
   }
 });
