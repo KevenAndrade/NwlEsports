@@ -10,6 +10,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png';
 import { Title } from '../../components/Title';
+import { DuoCard } from '../../components/DuoCard';
 
 export function Game() {
 
@@ -52,6 +53,8 @@ export function Game() {
           title={game.title}
           subtitle="Connect-se e comece a jogar !"
         />
+
+        <DuoCard/>
 
       </SafeAreaView>
     </Background>
