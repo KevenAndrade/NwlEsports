@@ -31,7 +31,7 @@ export function GameCard({ data, ...rest }: Props) {
                 <Text style={styles.ads}>
                     {data._count.ads} anúcios
                 </Text>
-            </LinearGradient>
+            </LinearGradient> 
         </ImageBackground>
     </TouchableOpacity>
   );
