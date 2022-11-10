@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, Text } from 'react-native';
+import { GameController } from 'phosphor-react-native';
 import { THEME } from '../../theme';
 import { DuoInfo } from '../DuoInfo';
 
@@ -44,7 +45,14 @@ export function DuoCard({ data }: Props) {
       <TouchableOpacity 
         style={styles.button}
       >
-        
+        <GameController
+          color={THEME.COLORS.TEXT}
+          size={20}
+        />
+        <Text style={styles.buttonText}>
+          Conectar
+        </Text>
+
       </TouchableOpacity>
     </View>
   );

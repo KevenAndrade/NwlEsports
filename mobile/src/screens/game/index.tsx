@@ -25,7 +25,7 @@ export function Game() {
   console.log(game);
 
   useEffect(() =>{
-    fetch(`http://192.168.1.71:3333/games/${game.id}/ads`)
+    fetch(`http://192.168.1.94:3333/games/${game.id}/ads`)
     .then(res => res.json())
     .then(data => {
       setAds(data)

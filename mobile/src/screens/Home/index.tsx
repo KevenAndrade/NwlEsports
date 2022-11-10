@@ -12,7 +12,7 @@ import { GameCard, GameCardProps } from '../../components/GameCard';
 export function Home() {
     const [Games, setGames] = useState<GameCardProps[]>([])
     useEffect(() =>{
-        fetch('http://192.168.1.71:3333/games')
+        fetch('http://192.168.1.94:3333/games')
         .then(res => res.json())
         .then(data => {
             setGames(data)
