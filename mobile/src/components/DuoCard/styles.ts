@@ -4,7 +4,7 @@ import { THEME } from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     width: 200, 
-    height: 290,
+    height: 330,
     backgroundColor: THEME.COLORS.SHAPE,
     borderRadius: 8, 
     padding: 20, 
@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   }, 
   button: {
-    width: 140,
+    width: "100%",
     height:36,
     borderRadius: 6, 
     backgroundColor: THEME.COLORS.PRIMARY,
