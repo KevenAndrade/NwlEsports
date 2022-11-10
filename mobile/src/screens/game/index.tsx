@@ -79,7 +79,7 @@ export function Game() {
           showsHorizontalScrollIndicator={false}
           horizontal
           style={styles.conteinerList}
-          contentContainerStyle={[ads.length > 0 ? styles.contentList : styles.emptyListContent ]}
+          contentContainerStyle={ [ads.length > 0 ? styles.contentList : styles.emptyListContent ] }
           ListEmptyComponent={()=>(
             <Text style={styles.emptyList}>
               Nao há anúcios publicados ainda.
