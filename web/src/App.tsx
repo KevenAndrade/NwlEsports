@@ -8,14 +8,14 @@ import { useEffect, useState } from 'react';
 import logoImg from './assets/Logo.svg';
 import { CreateAdModal } from './components/CreateAdModal';
 
-interface Game{
-  id: string;
-  title: string;
-  bannerUrl: string;
-  _count: {
-    ads: number;
+  interface Game{
+    id: string;
+    title: string;
+    bannerUrl: string;
+    _count: {
+      ads: number;
+    }
   }
-}
 
 function App() {
   const [Games, SetGames] = useState<Game[]>([]);
@@ -37,7 +37,7 @@ function App() {
         Seu <span className='bg-gradiente bg-clip-text text-transparent'> duo </span>  está aqui.
       </h1>
 
-      <div className=' grid grid-cols-6 gap-6 mt-16'>
+      <div className=' grid grid-cols-7 gap-6 mt-16'>
         { Games.length >0 ? (
             Games.map(game =>{
               return <Game key={game.id} bannerUrl={game.bannerUrl} title={game.title} adsCount={game._count.ads}/>
